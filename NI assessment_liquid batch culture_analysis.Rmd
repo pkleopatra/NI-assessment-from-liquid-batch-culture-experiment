@@ -1,0 +1,246 @@
+---
+title: "NI assessment from liquid batch culture experiment"
+author: "Alex Kanellopoulos and Kleopatra Papadouli"
+date: "2024-08-26"
+output: html_document
+---
+
+Brief description: This is a script that includes aids the assessment of NI activity of different pure compounds, tested in a liquid batch culture experiment. In the dataset, we have included 6 pure compounds, plus a known NI compound as positive control and DMSO treatments as negative control. The script helps to separate the different datasets and plot the corresponding activity plots. Additionally, we have included t-tests for all treatments against the negative control at all time-points. 
+
+Step 1: Let's see all the necessary packages needed for the analysis and load them. If they are not installed, we will install them first. 
+
+```{r Library Installation and Loading, echo=TRUE, message=FALSE, warning=FALSE}
+# Here we store the necessary packages in the necessary_packages variable
+necessary_packages <- c("readxl","dplyr","rstatix", "ggplot2","grid","gridExtra") 
+
+# Here we check if the necessary packages are installed. If not, R installs them 
+if (!requireNamespace(necessary_packages, quietly = TRUE)) {
+  install.packages(necessary_packages)
+}
+
+# Here, for every package included in the necessary_packages variable, R will load it. The character.only = TRUE ensures that library() will try to interpret the package names as characters (as it needs for it to work) 
+for (package in necessary_packages) {
+  library(package, character.only = TRUE)
+}
+```
+
+Step 1: Let's import the data for the inhibition plots
+  
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# Data import
+library(readxl)
+data_nitrite <- read_excel("Data.xlsx", col_names = TRUE)
+
+# We can change the names of the columns to more R-friendly names
+names(data_nitrite) <- c("Time", "Compound", "Treatment", "Nitrite", "Mean", "St.Dev", "St.Error", "CV%")
+
+# Let's view the data
+glimpse(data_nitrite)
+
+# We can store the names of the different compounds 
+compounds <- as.factor(levels(as.factor(data_nitrite$Compound)))
+
+# Create a second storage vector without DMSO 
+compounds_NI <- compounds[compounds != "DMSO"]
+compounds_NI <- droplevels(compounds_NI)
+
+compounds_NI
+```
+
+Step 2: Here we will split the data per compound into different data frames
+  
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(dplyr)
+
+# We will create an empty list
+dataframe_list <- list()
+
+# We will use a for() loop that, for every compound (except DMSO) will create a separate dataframe that includes all the compound treatments plus DMSO as a negative control 
+for (i in 1:summary(levels(compounds_NI))[[1]]) {
+  # Creates a temporary dataframe, each time taking all trearments of one compound and DMSO
+  data_nitr <- data.frame(filter(data_nitrite, Compound == compounds_NI[i] | Compound == "DMSO"))
+  # Creates a different name for the temporary dataframe including the specific compound
+  dataframe_name <- paste("df","[Nitrite]",compounds_NI[i], sep = "_")
+  # Stores the temporary dataframe under its new name in the empty list created in the beggining
+  dataframe_list[[dataframe_name]] <- data_nitr
+}
+
+# Let's see how many dataframes are inside the list 
+nrow(as.matrix(summary(dataframe_list)))
+
+# Let's see which dataframes are inside the list
+rownames(as.matrix(summary(dataframe_list)))
+```
+
+Step 3: Here we will create the legend order for all the inhibition plots. We will designate the order to follow the order the treatments are given in the excel file (i.e. DMSO, 100μM, 10μΜ, 1μΜ, 0.1μΜ)
+  
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# We will create the empty legend orders list  
+legend_order_list <- list()
+
+for (i in 1:nrow(as.matrix(summary(dataframe_list)))) {
+  # Creates a temporary vector with the treatments of each dataframe (!is.na(Mean))$Treatment filters the dataframe so there is only one row per treatment). We know we have 4 treatments + 1 negative control so we designate 1:5  
+  legend_order <- filter(dataframe_list[[i]], !is.na(Mean))$Treatment[1:5]
+  # Creates a new name
+  legend_order_name <- paste("legend","order", compounds_NI[i], sep = "_")
+  # Stores the temporary vector in the list under the new name
+  legend_order_list[[legend_order_name]] <- legend_order 
+}
+
+# Let's see which legend orders are inside the list
+rownames(as.matrix(summary(legend_order_list)))
+
+# Let's see one specific legend order  
+legend_order_list[[2]] 
+```
+
+Step 4: We will perform t - tests to statistically assess the differences in [Nitrite] for each treatment of each compound against the negative control
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(dplyr)
+
+# First, you can remove the data for the first time - points before the application of the compounds. It serves no role to perform statistical tests there. Here we know that we applied the compounds at Day 6
+data_t_test <- filter(data_nitrite, Time > 6)
+
+# Create an empty list to create separate data frames for the different time - points for all compounds 
+data_frames_for_t_test <- list()
+
+for (i in compounds_NI) {
+  for (j in min(data_t_test$Time):max(data_t_test$Time)) { 
+    data_i <- filter(data_t_test, Time == j)
+    data_i <- filter(data_i, Compound == i | Compound == "DMSO")
+    df_name <- paste("data","time", i, j, sep = "_")  
+    data_frames_for_t_test[[df_name]] <- data_i
+  }
+}
+
+# Let's see which data frames are in the list 
+rownames(as.matrix(summary(data_frames_for_t_test)))
+
+# Let's see one specific data frame  
+data_frames_for_t_test[["data_time_Compound A_10"]] 
+
+library(rstatix)
+
+# We create an empty list to store the tests
+t_test_list <- list()
+
+# We compute the t - tests
+for (i in 1:nrow(as.matrix(summary(data_frames_for_t_test)))) {
+  # For all tests we are using the first treatment (i.e. DMSO) as the reference group, and we can adjust the p - values using the less conservative Holm method, as we have fewer comparisons
+  t_test_temp <- t_test(data_frames_for_t_test[[i]], Nitrite ~ Treatment, ref.group = legend_order_list[[1]][1], conf.level = 0.95, p.adjust.method = "holm")
+  t_test_name <- paste("t_test", i, sep = "_")
+  t_test_list[[t_test_name]] <- t_test_temp
+}
+
+# Let's see which data frames are in the list 
+rownames(as.matrix(summary(t_test_list)))
+
+# Let's see one specific t - test  
+t_test_list[[50]] 
+
+# As you can see, the names fo the t-tests do not indicate which compound and time - point they refer to. We need to change that.
+names <- rownames(as.matrix(summary(data_frames_for_t_test)))
+last_two_parts <- sapply(names, function(name) {
+  parts <- strsplit(name, "_")[[1]]  
+  paste(tail(parts, 2), collapse = "_")  
+})
+names <- last_two_parts[1:nrow(as.matrix(summary(data_frames_for_t_test)))]
+
+# Let's see the corrected names
+names 
+
+# We can create a second list to store the tests under the correct name
+t_test_list_2 <- NULL
+
+for (i in 1:nrow(as.matrix(summary(data_frames_for_t_test)))) {
+  test_name <- paste("t_test", names[i], sep = "_")  
+  t_test_list_2[[test_name]] <- t_test_list[i]
+}
+
+# Let's see which tests are now in the second list 
+rownames(as.matrix(summary(t_test_list_2)))
+
+```
+
+Step 5: Now we can easily export the t - tests in .txt format. We will do that by compound
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+# We do not always have the same number of time - points. Here, we set the variable l to be the number of different time - points, thus the number of different t - tests for the same compound to be printed in the same .txt file
+l <- length(levels(as.factor(data_t_test$Time)))
+
+# Using the l variable, we can split the t - test reports from the list to the correct .txt file. 
+for (i in 1:length(compounds_NI)) {
+  sink(file = paste("t_tests",compounds_NI[i],".txt", sep = "_"))
+  print(t_test_list_2[(1+((i-1)*l)):(l+((i-1)*l))], width = 999)
+  sink(file = NULL)
+}
+
+# You can check the files in your directory
+```
+
+Step 6: We can generate the activity plots. 
+
+```{r echo=TRUE, fig.width=14, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+# Here we set a colour-set for the different treatments. The order here needs to correspond with the order of the treatments in the legend_order
+colors <- c("#1B2B2F", "#721E9D", "#F10478", "#F15504", "#F1AE04" )
+
+# We run for loops the same way to create all the different ggplots
+activity_plots_list <- list()
+
+for (i in 1:nrow(as.matrix(summary(dataframe_list)))) {
+ # Here we sort the data frames to be in the same order as the treatment order 
+  dataframe_list[[i]]$Treatment <- factor(dataframe_list[[i]]$Treatment, levels = legend_order_list[[i]])
+      activity_plot_temp <- ggplot(dataframe_list[[i]], aes(x = Time, y = Mean)) + 
+        geom_point(aes(x = Time, y = Mean, color = Treatment), size = 4) + 
+        theme_light() + 
+        labs(title = compounds_NI[i], x = "Time (days)", y = "[Nitrite] (μM)") + 
+        theme(axis.title = element_text(size = 28), axis.text.y = element_text(size = 24), axis.text.x = element_text(size = 17, angle = 0, hjust = 0), legend.text = element_text(size = 22), legend.title = element_blank(), legend.position = "bottom", legend.justification = "center", title = element_text(size = 30, face = "bold", hjust = 0.5)) + 
+        geom_errorbar(aes(ymin = Mean - St.Error, ymax = Mean + St.Error, width = 0.2)) + 
+        theme(plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "inches")) + 
+        scale_color_manual(values = colors) + 
+        geom_line(data = filter(dataframe_list[[i]], !is.na(Mean)), aes(x = Time, y = Mean, color= Treatment), linewidth = 2) + 
+        geom_rect(xmin = 0, xmax = 6, ymin = -50, ymax = 350, alpha = 0.005) + ylim(0, 300) +         guides(color=guide_legend(nrow=2, byrow = TRUE))
+
+  activity_plot_name <- paste("activity","plot", compounds_NI[i],sep = "_")
+  activity_plots_list[activity_plot_name] <- list(plot = activity_plot_temp)
+}
+
+# Let's see which plots are in the list 
+rownames(as.matrix(summary(activity_plots_list)))
+
+# Let's inspect one activity plot
+activity_plots_list[3]
+```
+
+Step 7: We can create a panel for our plots, placing the positive control first. For this, we can create a grid.
+
+```{r echo=TRUE, fig.height=60, fig.width=42, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+
+# As we may need an empty space in the grid for symmetry reasons, we will also create an empty plot
+empty_plot <- ggplot() + theme_void()
+empty_plot <- list(empty_plot)
+
+# We will create new list, putting the positive control plot first. We suggest doing this manually, by inspecting the activity plots list and using the numerical indices, like here. The empty plot can be put last
+activity_plots_list_2 <- list(plot= c(activity_plots_list[7], activity_plots_list[1], activity_plots_list[2], activity_plots_list[3], activity_plots_list[4], activity_plots_list[5], activity_plots_list[6], empty_plot))
+activity_plots_list_2 <- unlist(activity_plots_list_2, recursive = F)
+
+# We can create a plot arrangement out of the order of the list. It will be a 4 rows x 2 columns grid arrangement, with the heights of all rows being the same
+plot_arranged_A <- grid.arrange(grobs = activity_plots_list_2, ncol = 2, nrow = 4, heights = c(1.5,1.5,1.5,1.5))
+
+# We print the panel in a .pdf file
+cairo_pdf("Activity_Plots.pdf", onefile = T, height = 44, width = 42)
+grid.draw(plot_arranged_A)
+dev.off()
+```
+
+Thanks a lot for using this code! 
+
+Remember to always cite the author of the code you use!
+
+And buy a programmer a beer 🍺 ! They really need one!

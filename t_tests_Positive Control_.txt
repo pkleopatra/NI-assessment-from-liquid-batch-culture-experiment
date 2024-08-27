@@ -1,0 +1,255 @@
+$`t_test_Positive Control_7`
+$`t_test_Positive Control_7`$t_test_91
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3   14.1     2.08 0.004
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3   -0.0463  2.04 0.967
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3   15.0     2.14 0.003
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3    7.12    3.36 0.004
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.013 *           
+2 0.967 ns          
+3 0.013 *           
+4 0.013 *           
+
+
+$`t_test_Positive Control_8`
+$`t_test_Positive Control_8`$t_test_92
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     30.6   2.28
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -1.34  3.61
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     27.1   3.59
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3     19.0   2.80
+          p    p.adj p.adj.signif
+*     <dbl>    <dbl> <chr>       
+1 0.000498  0.001    **          
+2 0.258     0.258    ns          
+3 0.0000278 0.000111 ***         
+4 0.000483  0.001    **          
+
+
+$`t_test_Positive Control_9`
+$`t_test_Positive Control_9`$t_test_93
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3   35.7     2.39
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    0.0797  4.00
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3   32.1     3.54
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3   19.6     3.89
+          p     p.adj p.adj.signif
+*     <dbl>     <dbl> <chr>       
+1 0.000258  0.000516  ***         
+2 0.94      0.94      ns          
+3 0.0000173 0.0000692 ****        
+4 0.000049  0.000147  ***         
+
+
+$`t_test_Positive Control_10`
+$`t_test_Positive Control_10`$t_test_94
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3    30.0    2.05
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     0.460  2.57
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3    27.8    2.98
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3    18.1    3.29
+         p    p.adj p.adj.signif
+*    <dbl>    <dbl> <chr>       
+1 0.00097  0.002    **          
+2 0.681    0.681    ns          
+3 0.000109 0.000436 ***         
+4 0.000209 0.000627 ***         
+
+
+$`t_test_Positive Control_11`
+$`t_test_Positive Control_11`$t_test_95
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3    26.6    2.08
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    -0.303  2.88
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3    25.2    2.81
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3    15.4    3.57
+         p    p.adj p.adj.signif
+*    <dbl>    <dbl> <chr>       
+1 0.001    0.002    **          
+2 0.782    0.782    ns          
+3 0.000213 0.000852 ***         
+4 0.000216 0.000852 ***         
+
+
+$`t_test_Positive Control_12`
+$`t_test_Positive Control_12`$t_test_96
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3    23.5    2.08
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    -0.794  4.00
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3    22.2    2.79
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3    14.2    3.04
+         p p.adj p.adj.signif
+*    <dbl> <dbl> <chr>       
+1 0.001    0.003 **          
+2 0.472    0.472 ns          
+3 0.000314 0.001 **          
+4 0.000712 0.002 **          
+
+
+$`t_test_Positive Control_13`
+$`t_test_Positive Control_13`$t_test_97
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     18.4   2.32
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -1.02  2.88
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     18.6   2.65
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      9.41  3.94
+         p p.adj p.adj.signif
+*    <dbl> <dbl> <chr>       
+1 0.001    0.003 **          
+2 0.386    0.386 ns          
+3 0.000699 0.003 **          
+4 0.000762 0.003 **          
+
+
+$`t_test_Positive Control_14`
+$`t_test_Positive Control_14`$t_test_98
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3    12.1    2.01 0.007
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    -0.819  2.08 0.496
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3    11.9    2.50 0.003
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3     5.87   3.48 0.006
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.019 *           
+2 0.496 ns          
+3 0.012 *           
+4 0.019 *           
+
+
+$`t_test_Positive Control_15`
+$`t_test_Positive Control_15`$t_test_99
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     10.9   3.07 0.002
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -2.16  2.34 0.144
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     12.9   2.35 0.003
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      5.23  3.78 0.007
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.006 **          
+2 0.144 ns          
+3 0.009 **          
+4 0.015 *           
+
+
+$`t_test_Positive Control_16`
+$`t_test_Positive Control_16`$t_test_100
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3      9.37  2.05 0.01 
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -2.11  3.14 0.122
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3      8.91  2.46 0.006
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      3.57  3.79 0.026
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.031 *           
+2 0.122 ns          
+3 0.025 *           
+4 0.051 ns          
+
+
+$`t_test_Positive Control_17`
+$`t_test_Positive Control_17`$t_test_101
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3      9.53  2.06 0.01 
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -2.68  2.37 0.097
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3      9.87  2.15 0.008
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      2.35  3.99 0.079
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.032 *           
+2 0.158 ns          
+3 0.032 *           
+4 0.158 ns          
+
+
+$`t_test_Positive Control_18`
+$`t_test_Positive Control_18`$t_test_102
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     11.5   2.03 0.007
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -2.83  3.04 0.065
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     11.5   2.09 0.006
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      2.55  3.86 0.066
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.026 *           
+2 0.13  ns          
+3 0.026 *           
+4 0.13  ns          
+
+
+$`t_test_Positive Control_19`
+$`t_test_Positive Control_19`$t_test_103
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     10.2   2.01 0.009
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3     -1.85  2.58 0.176
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     10.4   2.62 0.003
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3      1.82  4.00 0.143
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.028 *           
+2 0.286 ns          
+3 0.013 *           
+4 0.286 ns          
+
+
+$`t_test_Positive Control_20`
+$`t_test_Positive Control_20`$t_test_104
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3     9.30   2.36 0.006
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    -2.27   2.38 0.131
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3     9.44   2.81 0.003
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3     0.292  3.28 0.788
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.019 *           
+2 0.262 ns          
+3 0.013 *           
+4 0.788 ns          
+
+
+$`t_test_Positive Control_21`
+$`t_test_Positive Control_21`$t_test_105
+# A tibble: 4 × 10
+  .y.     group1        group2                   n1    n2 statistic    df     p
+* <chr>   <chr>         <chr>                 <int> <int>     <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Positive Control 10μM     3     3    11.5    2.00 0.007
+2 Nitrite DMSO 0,1% v/v Positive Control 1μM      3     3    -2.72   2.43 0.092
+3 Nitrite DMSO 0,1% v/v Positive Control 25μM     3     3    11.1    2.88 0.002
+4 Nitrite DMSO 0,1% v/v Positive Control 5μM      3     3     0.774  3.97 0.482
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.022 *           
+2 0.184 ns          
+3 0.007 **          
+4 0.482 ns          
+
+

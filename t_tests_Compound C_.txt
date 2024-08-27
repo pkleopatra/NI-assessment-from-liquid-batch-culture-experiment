@@ -1,0 +1,255 @@
+$`t_test_Compound C_7`
+$`t_test_Compound C_7`$t_test_31
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df        p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>    <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -1.21   3.99 0.294   
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    12.5    3.07 0.000986
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     0.984  3.43 0.389   
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.143  3.77 0.894   
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.882 ns          
+2 0.004 **          
+3 0.882 ns          
+4 0.894 ns          
+
+
+$`t_test_Compound C_8`
+$`t_test_Compound C_8`$t_test_32
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df         p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>     <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -0.716  2.29 0.54     
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    22.1    3.99 0.0000252
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     2.01   3.97 0.115    
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.994  2.26 0.414    
+     p.adj p.adj.signif
+*    <dbl> <chr>       
+1 0.828    ns          
+2 0.000101 ***         
+3 0.345    ns          
+4 0.828    ns          
+
+
+$`t_test_Compound C_9`
+$`t_test_Compound C_9`$t_test_33
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df         p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>     <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -0.653  2.20 0.575    
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    33.4    2.80 0.0000986
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     0.430  3.58 0.692    
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.892  2.17 0.46     
+     p.adj p.adj.signif
+*    <dbl> <chr>       
+1 1        ns          
+2 0.000394 ***         
+3 1        ns          
+4 1        ns          
+
+
+$`t_test_Compound C_10`
+$`t_test_Compound C_10`$t_test_34
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df        p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>    <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -0.971  2.43 0.418   
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    27.8    2.43 0.000422
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.288  3.10 0.791   
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.760  2.30 0.517   
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 1     ns          
+2 0.002 **          
+3 1     ns          
+4 1     ns          
+
+
+$`t_test_Compound C_11`
+$`t_test_Compound C_11`$t_test_35
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df        p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>    <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -0.822  2.99 0.471   
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    25.7    2.19 0.000934
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.346  2.59 0.755   
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.738  2.46 0.524   
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 1     ns          
+2 0.004 **          
+3 1     ns          
+4 1     ns          
+
+
+$`t_test_Compound C_12`
+$`t_test_Compound C_12`$t_test_36
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3   -1.05    4.00 0.351 1    
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3   22.7     2.00 0.002 0.008
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3   -0.0147  2.05 0.99  1    
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    0.586   2.74 0.603 1    
+  p.adj.signif
+* <chr>       
+1 ns          
+2 **          
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_13`
+$`t_test_Compound C_13`$t_test_37
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df        p
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl>    <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -1.43   3.72 0.232   
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    15.3    3.44 0.000274
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.499  2.14 0.664   
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3     0.178  3.51 0.869   
+  p.adj p.adj.signif
+* <dbl> <chr>       
+1 0.696 ns          
+2 0.001 **          
+3 1     ns          
+4 1     ns          
+
+
+$`t_test_Compound C_14`
+$`t_test_Compound C_14`$t_test_38
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -1.56   2.91 0.22  0.66 
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    11.3    2.09 0.007 0.026
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     0.131  2.05 0.908 1    
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -0.396  4.00 0.713 1    
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_15`
+$`t_test_Compound C_15`$t_test_39
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -3.04   2.78 0.062 0.185
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    12.1    2.12 0.005 0.022
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.159  2.08 0.888 0.888
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -1.52   3.60 0.211 0.422
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_16`
+$`t_test_Compound C_16`$t_test_40
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -1.89   2.22 0.186 0.558
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3     8.67   2.05 0.012 0.048
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     0.336  2.47 0.764 0.764
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -1.06   3.01 0.368 0.736
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_17`
+$`t_test_Compound C_17`$t_test_41
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -2.69   2.00 0.114 0.342
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3     9.42   2.05 0.01  0.041
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.422  2.34 0.709 0.709
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -2.04   2.29 0.161 0.342
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_18`
+$`t_test_Compound C_18`$t_test_42
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -3.16   2.31 0.072 0.217
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3     5.98   3.80 0.005 0.019
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.762  2.05 0.524 0.524
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -2.62   2.87 0.083 0.217
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_19`
+$`t_test_Compound C_19`$t_test_43
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3   -2.56    2.05 0.122 0.366
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    9.60    2.03 0.01  0.041
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    0.0525  2.31 0.962 0.962
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3   -1.34    2.33 0.295 0.59 
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_20`
+$`t_test_Compound C_20`$t_test_44
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -2.19   2.22 0.147 0.441
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3     9.39   2.06 0.01  0.041
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3     0.223  2.04 0.844 0.844
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -1.82   2.13 0.202 0.441
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+
+$`t_test_Compound C_21`
+$`t_test_Compound C_21`$t_test_45
+# A tibble: 4 × 10
+  .y.     group1        group2              n1    n2 statistic    df     p p.adj
+* <chr>   <chr>         <chr>            <int> <int>     <dbl> <dbl> <dbl> <dbl>
+1 Nitrite DMSO 0,1% v/v Compound C 0.1μM     3     3    -2.65   2.03 0.116 0.348
+2 Nitrite DMSO 0,1% v/v Compound C 100μM     3     3    10.6    2.05 0.008 0.032
+3 Nitrite DMSO 0,1% v/v Compound C 10μM      3     3    -0.274  2.52 0.805 0.805
+4 Nitrite DMSO 0,1% v/v Compound C 1μM       3     3    -1.64   2.47 0.219 0.438
+  p.adj.signif
+* <chr>       
+1 ns          
+2 *           
+3 ns          
+4 ns          
+
+

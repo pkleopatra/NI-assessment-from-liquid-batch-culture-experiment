@@ -1,11 +1,10 @@
-# NI-assessment-from-liquid-batcg-culture-experiment
+# NI-assessment-from-liquid-batch-culture-experiment
 This is a Repository of R Resources to assess the NI effect of pure compounds on an ammoxia oxidizing microorganism in a liquid batch experiment format.
 
 We include here the R project file, the R script in a form of an .Rmd file, along with an R Markdown HTML file, and the outputs produced from the script
 
 You can find the .html file if you follow this: 
-[LINK](https://kanellopal.github.io/BNI-Assessment-Root-Exudates/BNI_Assessment_Root_Exudates_Merged_Analysis.html)
-
+[LINK](https://pkleopatra.github.io/NI-assessment-from-liquid-batch-culture-experiment/NI-assessment_liquid-batch-culture_analysis.html)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *DISCLAIMER.*
 The following is the disclaimer that applies to all scripts, functions, one-liners, etc. This disclaimer supersedes any disclaimer included in any script, function, one-liner, etc.
